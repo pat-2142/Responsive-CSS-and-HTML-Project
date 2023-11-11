@@ -58,12 +58,13 @@ body {
 
 .box {
   position: fixed;
-  top: 0;
+  top: 2%;
   left: 0;
   bottom: 0;
   width: 100%;
   overflow: hidden;
   margin-top: 50px;
+  z-index: -1;
 }
 
 .box li {
@@ -191,7 +192,6 @@ body {
   font-size: 40px;
   margin-top: 65px;
   margin-bottom: 50px;
-  background-color: #474f55;
   color: white;
   font-weight: 800;
   animation: fade-up 2s;
