@@ -1,6 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
  /* For mobile phones: */
@@ -8,13 +11,33 @@
     width: 100%;
 }
 
+body {
+  background-color: #474f55;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}
+
+.custom-btn {
+  padding: 20px;
+  color: white;
+  background-color: #2980b9;
+  border: 0px;
+  font-weight: 800;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: orange;
+  background-color: #474f55;
   top: 0;
   position: fixed;
+  color: white;
+  border-bottom: 2px solid white;
 }
 
 .nav-link {
@@ -26,6 +49,93 @@
   bottom: 0;
   position: fixed;
   background-color: lightblue;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.box li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+}
+
+.box li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.box li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+
+.box li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+
+.box li:nth-child(4) {
+  left: 45%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
+.box li:nth-child(5) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+
+@keyframes animate {
+  0% {
+      transform: translateY(0) scale(0);
+  }
+
+  100% {
+      transform: translateY(-800px) scale(2);
+      opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+      opacity: 0;
+      transform: translateY(50px) scale(1);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+  }
 }
 
 .dropbtn {
@@ -78,9 +188,13 @@
 }
 
 .main-content {
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 65px;
   margin-bottom: 50px;
+  background-color: #474f55;
+  color: white;
+  font-weight: 800;
+  animation: fade-up 2s;
 }
   
   @media only screen and (min-width: 600px) {
@@ -118,7 +232,7 @@
       display: inline;
     }
 
-    .dropbtn {
+    .menu-icon {
       display: none;
     }
 
@@ -145,5 +259,4 @@
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid red;
 }
