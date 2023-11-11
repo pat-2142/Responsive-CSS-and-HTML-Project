@@ -18,7 +18,6 @@ body {
 .logo {
   text-decoration: none;
   color: white;
-  font-weight: 800;
 }
 
 .custom-btn {
@@ -27,6 +26,11 @@ body {
   background-color: #2980b9;
   border: 0px;
   font-weight: 800;
+}
+
+.custom-btn:hover {
+  background-color: #155799;
+  transition: 0.3s;
 }
 
 .navbar {
@@ -38,6 +42,7 @@ body {
   position: fixed;
   color: white;
   border-bottom: 2px solid white;
+  font-weight: 800;
 }
 
 .nav-link {
@@ -56,6 +61,101 @@ body {
   height: 30px;
 }
 
+.nav-link {
+  position: relative;
+  margin-left: 20px; /*Increase the left side margin size of the nav items*/
+  text-align: center; /*Center aligns the text of the nav items*/
+  padding: 5px; /*Adds padding to all sides of the nav items*/
+  color: white; /*Sets the font color of the nav items*/
+  text-decoration: none; /*Removes text decoration of the nav items like underline*/
+  font-weight: 800;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link:hover::after{
+  width: 100%;
+}
+
+.main-content {
+  font-size: 40px;
+  margin-top: 65px;
+  margin-bottom: 50px;
+  color: white;
+  font-weight: 800;
+  animation: fade-up 2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980b9;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  margin-top: 16px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown menu on hover */
+.dropdown:hover .dropbtn {
+  background-color: #2980b9;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
 .box {
   position: fixed;
   top: 2%;
@@ -63,7 +163,6 @@ body {
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  margin-top: 50px;
   z-index: -1;
 }
 
@@ -138,66 +237,8 @@ body {
       transform: translateY(0px) scale(1);
   }
 }
-
-.dropbtn {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980b9;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  right: 0;
-  margin-top: 16px;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown menu on hover */
-.dropdown:hover .dropbtn {
-  background-color: #2980b9;
-}
-
-.main-content {
-  font-size: 40px;
-  margin-top: 65px;
-  margin-bottom: 50px;
-  color: white;
-  font-weight: 800;
-  animation: fade-up 2s;
-}
   
-  @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) {
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
@@ -211,9 +252,9 @@ body {
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
-  }
+}
   
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
@@ -238,8 +279,9 @@ body {
 
     .main-content {
       margin-top: 50px;
+      height: 85vh;
     }
-  }
+}
 
    /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}
@@ -254,9 +296,4 @@ body {
 @media only screen and (min-width: 992px) {}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {} 
-  
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
+@media only screen and (min-width: 1200px) {}
